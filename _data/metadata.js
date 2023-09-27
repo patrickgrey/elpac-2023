@@ -1,11 +1,11 @@
 module.exports = {
-	title: "Eleventy Base Blog v8",
-	url: "https://example.com/",
-	language: "en",
-	description: "I am writing about my experiences as a naval navel-gazer.",
-	author: {
-		name: "Your Name Here",
-		email: "youremailaddress@example.com",
-		url: "https://example.com/about-me/"
-	}
+  title: "ELPAC 2023",
+  url: "https://elpac.eurocontrol.int/",
+  language: "en",
+  description: "ELPAC | ICAO Language Proficiency Testing for air traffic controllers and pilots.",
+  author: {
+    name: "Patrick Grey",
+    email: "withheld",
+    url: "https://risingsky.co.uk/"
+  }
 }
