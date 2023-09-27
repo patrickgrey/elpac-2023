@@ -4,7 +4,7 @@ paths:
   collections: ''
   layouts: _includes
   static: ''
-  uploads: uploads
+  uploads: public/img
   includes: _includes
   pages: ''
 collections_config:
