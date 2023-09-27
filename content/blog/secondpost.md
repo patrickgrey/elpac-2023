@@ -1,16 +1,17 @@
 ---
 title: This is my second post with a much longer title.
 description: This is a post on My Blog about leveraging agile frameworks.
-date: 2018-07-04
+date: 2018-07-04T00:00:00Z
 tags:
   - number 2
 ---
 Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
 
+![](/uploads/img-5477.jpg)
+
 ## Section Header
 
-<a href="/blog/firstpost/">First post</a>
-<a href="/blog/thirdpost/">Third post</a>
+[First post](/blog/firstpost/) [Third post](/blog/thirdpost/)
 
 Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
 
