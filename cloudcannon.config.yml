@@ -1,30 +1,32 @@
-source: content
-paths:
-  data: ../_data
-  collections: ''
-  layouts: _includes
-  static: ''
-  uploads: public/img
-  includes: _includes
-  pages: ''
+_inputs:
+  date:
+    type: date
+    label: Published on
+    comment: The blog post or site was published on this day.
+  layout:
+    hidden: true
+  tags:
+    type: multiselect
+    options:
+      allow_create: true
+      empty_type: array
+      values:
+        - Accessibility
+        - CSS
+        - HTML
+        - JavaScript
+        - Performance
+        - Progressive Enhancement
+        - Responsive Web Design
+        - Web Design
 collections_config:
-  posts:
-    path: blog
-    output: true
-    icon: notes
-    disable_add: false
-    disable_add_folder: false
-    disable_file_actions: false
-  data:
-    path: ../_data
-    output: false
-    icon: notes
-    disable_add: false
-    disable_add_folder: false
-    disable_file_actions: false
-_inputs: {}
-_select_data: {}
-_structures: {}
-_editables: {}
-data_config: {}
-timezone: Etc/UTC
+  sites:
+    icon: link
+    preview:
+      gallery:
+        text: " "
+    _enabled_editors:
+      - data
+    schemas:
+      default:
+        path: src/_schemas/site.md
