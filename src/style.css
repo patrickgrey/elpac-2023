@@ -18,6 +18,7 @@ html, body {
 }
 html {
 	font-family: system-ui, sans-serif;
+  font-size: 110%;
 	margin: 0 auto;
 }
 body {
@@ -37,6 +38,24 @@ header {
 	grid-column: 1/6;
 	max-width: 100%;
 	margin: auto auto var(--rhythm);
+}
+nav > ul {
+  padding-left: 0;
+  margin: 1rem auto;
+  display: block;
+  width:fit-content;
+}
+nav > ul > li {
+display: inline-block;
+}
+nav > ul > li > a {
+padding: 0.5rem 1rem;
+font-weight:bold;
+text-decoration:none;
+background-color: var(--primary-light);
+color: black !important;
+margin-right: 0.5rem;
+border-radius: 0.25rem;
 }
 details {
 	padding: .5em;
@@ -71,6 +90,10 @@ p:first-child {
 }
 p:last-child {
 	margin-bottom: 0;
+}
+
+footer {
+  margin-top: 100vh;
 }
 
 .sr-only {

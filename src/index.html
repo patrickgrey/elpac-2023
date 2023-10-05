@@ -1,88 +1,99 @@
 ---
 title: Educational Sensational Inspirational Foundational
 layout: layout.liquid
-video:
-  url: https://www.youtube.com/watch?v=yXcxvBJuULU
-  title: From Zero to CMS in 2 Minutes with CloudCannon and Eleventy
-  poster: https://i.ytimg.com/vi/yXcxvBJuULU/maxresdefault.jpg
-  show_every: 18
 ---
 <header>
-	<h1 class="title editable">
-		<a href="/"><u>Educ</u>ational <u>Sens</u>ational <u>Inspir</u>ational <u>Found</u>ational</a>
-	</h1>
+  <h1 class="title editable">
+    <a href="/"><u>ELPAC</u> 2023</a>
+  </h1>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/test-taker/">Test taker</a></li>
+      <li><a href="/training/">Training activities</a></li>
+      <li><a href="/organisations/">ELPAC for organisations</a></li>
+      <li><a href="/regulations/">Regulatory requirements</a></li>
+    </ul>
+  </nav>
 </header>
 <main>
-	<div class="editable">
-		<p>A historical record of foundational web development blog posts. <a rel="noreferrer" href="https://www.youtube.com/watch?v=yXcxvBJuULU"><img src="https://v1.indieweb-avatar.11ty.dev/{{ video.url | url_encode }}/" alt="Favicon of {{ video.url }}" width="32" height="32" loading="lazy" class="favicon">Watch <em>From Zero to CMS in 2 Minutes with CloudCannon and Eleventy</em> (on YouTube)</a> to learn how this web site was made.</p>
-		<p>This collection of ×{{ collections.sites | size }} blog posts and web sites is ordered chronologically. Subscribe to the <a href="/feed.xml">RSS feed</a>.</p>
-	</div>
-	<filter-container oninit>
-		<form>
-			<details>
-				<summary><strong>Filters</strong></summary>
-				<label><input name="filter-tag" type="radio" value="" checked data-filter-key="tags"> Show all <em>(×{{ collections.sites | size }})</em></label>
-				{%- assign taglist = collections | keys | sort %}
-				{%- for tag in taglist %}
-				<label><input name="filter-tag" type="radio" value="{{ tag | slugify }}" data-filter-key="tags"> {{ tag }} <em>(×{{ collections[tag] | size }})</em></label>
-				{%- endfor %}
-			</details>
-		</form>
-	{%- for site in collections.sites %}
-		{%- if forloop.first %}
-		<dl>
-		{%- endif %}
-			<dt data-filter-tags="{{ site.data.tags | toSlugList }}">
-				<a href="{{ site.data.url }}" class="site-link">
-					{%- if site.data.favicon_override_image_path %}
-					{% embedFavicon site.data.favicon_override_image_path, site.data.title %}
-					{%- else -%}
-					<img src="https://v1.indieweb-avatar.11ty.dev/{{ site.data.url | url_encode }}/" alt="Favicon of {{ site.data.url }}" width="32" height="32" loading="lazy" class="site-favicon">
-					{%- endif -%}
-					<span>{{ site.data.title }}</span>
-				</a>
-				<p class="site-metadata">
-					{%- if site.data.author %}<span>{{ site.data.author | normalize }}</span>{% endif %}
-					{%- if site.date %} (<time datetime="{{ site.date | toDateFormat }}">{{ site.date | toDateFormat }}</time>){% endif %}
-					<a href="cloudcannon:collections/{{ site.inputPath | replace: './', '' }}" class="cc-editor-link">Edit</a>
-				</p>
-			</dt>
-			<dd data-filter-tags="{{ site.data.tags | toSlugList }}" class="site-screenshot--skew">
-				{%- if not site.data.skip_screenshot %}
-				<a href="{{ site.data.url }}">
-					{%- if site.data.use_opengraph %}
-						{%- embedOpenGraph site.data.url, site.data.title, forloop.first %}
-					{%- else %}
-						{%- embedScreenshot site.data.url, site.data.title, forloop.first %}
-					{%- endif %}
-				</a>
-				{%- endif %}
-			</dd>
-		{%- assign showVideo = forloop.index | modulo: video.show_every %}
-		{%- if showVideo == 0 %}
-		</dl>
-		<div class="site-promo">
-			<a href="{{ video.url }}" class="site-promo-link callout">
-				<span class="site-link">
-					<img src="https://v1.indieweb-avatar.11ty.dev/{{ video.url | url_encode }}/" alt="Favicon of {{ video.url }}" width="32" height="32" loading="lazy" class="site-favicon">
-					<span>Learn how this was built: <em>{{ video.title }}</em></span>
-				</span>
-				{% embedScreenshot video.poster, video.title %}
-			</a>
-		</div>
-		{%- if not forloop.last %}
-		<dl>
-		{%- endif %}
-		{%- endif %}
-		{%- if forloop.last %}
-		</dl>
-		{%- endif %}
-	{%- endfor %}
-	</filter-container>
+  <div class="editable">
+    <h2>English Language Proficiency for Aeronautical Communication</h2>
+
+    <p>A test to assess ICAO English Language Proficiency for pilots and air traffic controllers</p>
+
+    <p>The ELPAC suite comprises three tests: ELPAC ATC, ELPAC pilots, ELPAC level 6. The ELPAC test suite has been designed to assess the level of proficiency of air traffic controllers and pilots in the context of radio telephony communications and in accordance with the ICAO language proficiency requirements that were put in place in 2011.</p>
+
+    <p>The ELPAC ATC test assesses the full range of communicative tasks at ICAO levels 4 and 5 that an air traffic controller maybe confronted with in the OPS room or the ATC control tower. Air traffic controllers rely on ICAO standardized phraseology in everyday situations however in an unexpected situation they may have to use plain English and they may have to shift between using standardized phraseology and plain English in order to adequately deal with and support the flight crews.</p>
+
+<h2>Research papers</h2>
+    
+    <p>This collection of {{ collections.sites | size }} research papers is ordered chronologically. Subscribe to the <a href="/feed.xml">RSS
+        feed</a>.</p>
+  </div>
+
+    {%- for site in collections.sites %}
+    {%- if forloop.first %}
+    <dl>
+      {%- endif %}
+      <dt data-filter-tags="{{ site.data.tags | toSlugList }}">
+        <a href="{{ site.data.url }}" class="site-link">
+          {%- if site.data.favicon_override_image_path %}
+          {% embedFavicon site.data.favicon_override_image_path, site.data.title %}
+          {%- else -%}
+          <img
+            src="https://v1.indieweb-avatar.11ty.dev/{{ site.data.url | url_encode }}/"
+            alt="Favicon of {{ site.data.url }}" width="32" height="32"
+            loading="lazy" class="site-favicon">
+          {%- endif -%}
+          <span>{{ site.data.title }}</span>
+        </a>
+        <p class="site-metadata">
+          {%- if site.data.author %}<span>{{ site.data.author | normalize }}</span>{% endif %}
+          {%- if site.date %} (<time
+            datetime="{{ site.date | toDateFormat }}">{{ site.date | toDateFormat }}</time>){% endif %}
+          <a href="cloudcannon:collections/{{ site.inputPath | replace: './', '' }}"
+            class="cc-editor-link">Edit</a>
+        </p>
+      </dt>
+      <dd data-filter-tags="{{ site.data.tags | toSlugList }}"
+        class="site-screenshot--skew">
+        {%- if not site.data.skip_screenshot %}
+        <a href="{{ site.data.url }}">
+          {%- if site.data.use_opengraph %}
+          {%- embedOpenGraph site.data.url, site.data.title, forloop.first %}
+          {%- else %}
+          {%- embedScreenshot site.data.url, site.data.title, forloop.first %}
+          {%- endif %}
+        </a>
+        {%- endif %}
+      </dd>
+      {%- assign showVideo = forloop.index | modulo: video.show_every %}
+      {%- if showVideo == 0 %}
+    </dl>
+    <div class="site-promo">
+      <a href="{{ video.url }}" class="site-promo-link callout">
+        <span class="site-link">
+          <img
+            src="https://v1.indieweb-avatar.11ty.dev/{{ video.url | url_encode }}/"
+            alt="Favicon of {{ video.url }}" width="32" height="32"
+            loading="lazy" class="site-favicon">
+          <span>Learn how this was built: <em>{{ video.title }}</em></span>
+        </span>
+        {% embedScreenshot video.poster, video.title %}
+      </a>
+    </div>
+    {%- if not forloop.last %}
+    <dl>
+      {%- endif %}
+      {%- endif %}
+      {%- if forloop.last %}
+    </dl>
+    {%- endif %}
+    {%- endfor %}
 </main>
 <footer class="callout">
-	<p class="editable">
-		<em>This web site was created by <a href="https://www.zachleat.com/">Zach Leatherman</a> and built with <a href="https://www.11ty.dev/">Eleventy</a> and <a href="https://cloudcannon.com/">CloudCannon</a>. Check out the <a href="https://github.com/zachleat/educational-sensational-inspirational-foundational">source code for this project on GitHub</a> or watch <a href="https://www.youtube.com/watch?v=yXcxvBJuULU">the making-of video on YouTube</a>. Feel free to head over to <a href="https://fediverse.zachleat.com/@zachleat/110855134082623101">the Mastodon post that started it all</a>.</em>
-	</p>
-	{% embedYouTube "yXcxvBJuULU" %}
+  <p class="editable">
+    This is the footer
+  </p>
 </footer>
