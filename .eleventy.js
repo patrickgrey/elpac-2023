@@ -7,6 +7,11 @@ module.exports = function(eleventyConfig) {
 
 	eleventyConfig.addPassthroughCopy("./src/*.{css,png}");
 
+  eleventyConfig.addPassthroughCopy("src/uploads/*");
+
+  eleventyConfig.addPassthroughCopy({
+		"src/uploads/": "public/uploads/"});
+
 	eleventyConfig.addPassthroughCopy({
 		"node_modules/@11ty/is-land/is-land.js": "public/is-land.js",
 

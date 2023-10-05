@@ -57,6 +57,9 @@ color: black !important;
 margin-right: 0.5rem;
 border-radius: 0.25rem;
 }
+img {
+  width:100%;
+}
 details {
 	padding: .5em;
 	background-color: var(--primary-light);
